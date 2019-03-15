@@ -1,0 +1,39 @@
+head, body {
+    background-color: rgb(70, 70, 70);
+}
+
+#navbar li {
+    display: inline;
+    background-color: rgb(30, 30, 30);
+    padding: 10px;
+    border-radius: 20px;
+}
+#navbar p {
+    display: inline;
+}
+#navbar a {
+    text-decoration: none;
+}
+
+#title, .description, #navbar p {
+    color: rgb(250, 120, 0);
+}
+
+.projectTumbnail div {
+    width: 900px;
+    background-color: rgb(30, 30, 30);
+    margin: 10px;
+    padding: 10px;
+}
+
+.projectTumbnail img {
+    width: 400;
+    height: 200;
+}
+
+.projectTumbnail p {
+    float: right;
+    text-align: left;
+    font-size: 20px;
+    color: rgb(255, 120, 0);
+}
