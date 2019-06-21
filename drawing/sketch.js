@@ -14,8 +14,11 @@ function setCursorCount(num) {
     }
 }
 
+let lastWidth, lastHeight;
 function setup() {
-    createCanvas(1600, 900);
+    lastWidth = windowWidth * 0.9;
+    lastHeight = windowHeight * 0.9;
+    createCanvas(lastWidth, lastHeight);
     background(51);
     angleMode(DEGREES);
     mainCursor = new Cursor(mouseX, mouseY);
@@ -44,10 +47,20 @@ function setCursors() {
     }
 }
 
+function updateScreenSize() {
+    if (lastWidth != windowWidth * 0.9 ||
+        lastHeight != windowHeight * 0.9) {
+        lastWidth = windowWidth * 0.9;
+        lastHeight = windowHeight * 0.9;
+        resizeCanvas(lastWidth, lastHeight);
+        background(51);
+    }
+}
+
 function draw() {
+    updateScreenSize();
     fill(255, 120, 0);
     noStroke();
-    rect(0, height - 100, width, 100);
 
     mainCursor.setPos(mouseX, mouseY);
 

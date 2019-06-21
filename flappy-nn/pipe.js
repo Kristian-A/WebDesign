@@ -1,10 +1,10 @@
 class Pipe {
 	constructor() {
 		this.gap = 150;
-		this.width = 100;
+		this.width = width*0.1;
 		this.x = width;
 
-		let gapY = random(this.gap + 30, height-this.gap - 30);
+		let gapY = random(this.gap + height*0.1, height-this.gap - height*0.1);
 		this.upperH = height - gapY;
 		this.lowerH = height - gapY + this.gap;
 		this.isPassed = false;

@@ -4,10 +4,14 @@ body {
     background: linear-gradient(to right, #A43931, #1D4350);
 }
 
+canvas {
+    margin: auto;
+}
+
 .navbar {
     width: auto;
     height: auto;
-    padding: 10px;
+    padding: 0.3%;
     background-color: rgba(51, 51, 51, .6);
     border-radius: 10px;
 }
@@ -19,42 +23,50 @@ body {
 .navbar li, .navbar p {
     display: inline;
 }
+.navbar p {
+    font-size: 90%;
+}
 
 .navbar a, .navigation {
     width: auto;
-    height: 10px;
-    padding: 10px;
-    margin: 5px;
+    height: 0.5%;
+    padding: 0.6%;
+    margin: 0.1%;
     border-radius: 15px;
     text-decoration: none;
     background-color: rgb(30, 30, 30);
 
-    transition-property: padding;
+    transition-property: padding, background-color;
     transition-duration: 0.4s;
 }
 
 .navbar a:hover, .navigation:hover {
-    padding: 15px;
-}
-
-.navigation p {
-    display: inline;
+    padding: 1%;
+    background-color: rgb(60, 60, 60);
 }
 
 .navigation {
     border-radius: 5px;
 }
 
-#title, .description, .navbar p {
+.navigation p {
+    display: inline;
+}
+
+#title, .description, .navbar p, .navigation {
     color: rgb(250, 120, 0);
 }
 
+.description {
+    font-size: 80%;
+}
+
 .projectTumbnail div {
-    width: 1200px;
+    width: 80%;
     background-color: rgb(30, 30, 30);
     margin-left: 0%;
-    margin-top: 20px;
-    padding: 10px;
+    margin-top: 1%;
+    padding: 1%;
     border-radius: 10px;
 
     transition-property: margin-left;
@@ -66,16 +78,16 @@ body {
 }
 
 .projectTumbnail img {
-    width: 500;
-    height: 300;
+    width: 40%;
+    height: auto;
 }
 
 .projectTumbnail p {
     float: right;
     text-align: left;
-    padding-right: 80px;
-    padding-top: 25px;
-    font-size: 25px;
+    padding-right: 3.5%;
+    padding-top: 5%;
+    font-size: 30px;
     color: rgb(255, 120, 0);
 }
 
@@ -87,6 +99,6 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 300px;
-    height: 300px;
+    width: 20%;
+    height: auto;
 }

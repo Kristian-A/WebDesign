@@ -5,7 +5,7 @@ Cursor = function(x, y) {
 	this.lx = undefined;
 	this.ly = undefined;
 
-	this.clr = [];
+	this.colorOff = 0;
 
 	this.show = function() {
 		noStroke();
@@ -14,25 +14,25 @@ Cursor = function(x, y) {
 	}
 
 	this.trail = function() {
-		if (this.y > height-100) {
-			this.lx = null;
-			return;
-		}
-
 		if (this.lx == null) {
 			this.lx = this.x;
 			this.ly = this.y;
 		}
 		strokeWeight(8);
-		stroke(this.clr.r, this.clr.g, this.clr.b);
+		let r = 250 - this.colorOff > 0 ? 250 - this.colorOff : 0;
+		let g = 120 - this.colorOff > 0 ? 120 - this.colorOff : 0;
+		stroke(r, g, 0);
 		line(this.x, this.y, this.lx, this.ly);
 		this.lx = this.x;
 		this.ly = this.y;
+
+		this.colorOff += 2;
 	}
 
 	this.reset = function() {
 		this.lx = null;
 		this.ly = null;
+		this.colorOff = 0;
 	}
 
 	this.setPos = function(x, y) {

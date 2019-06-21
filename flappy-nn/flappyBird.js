@@ -17,9 +17,12 @@ function restart() {
 	pipes.push(currentPipe);
 }
 
+let lastWidth, lastHeight;
 function setup() {
+    lastWidth = windowWidth * 0.9;
+    lastHeight = windowHeight * 0.9;
+    createCanvas(lastWidth, lastHeight);
 	background(51);
-	createCanvas(1000, 600);
 	gravity = createVector(0, 0.5);
 	birds = [];
 	for (let i = 0; i < COUNT; i++) {
@@ -30,7 +33,18 @@ function setup() {
 
 }
 
+function updateScreenSize() {
+	if (lastWidth != windowWidth * 0.9 ||
+		lastHeight != windowHeight * 0.9) {
+		lastWidth = windowWidth * 0.9;
+		lastHeight = windowHeight * 0.9;
+		resizeCanvas(lastWidth, lastHeight);
+		background(51);
+	}
+}
+
 function draw() {
+	updateScreenSize();
 	background(51);
 	for (let i = 0; i < gensperframe;) {
 		for (let pipe of pipes) {
