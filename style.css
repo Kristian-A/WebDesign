@@ -102,3 +102,10 @@ canvas {
     width: 20%;
     height: auto;
 }
+
+canvas {
+    left: 40%;
+    top: 0%;
+    position: absolute;
+    z-index: -1;
+}
