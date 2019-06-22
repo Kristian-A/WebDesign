@@ -5,18 +5,24 @@ class Symbol {
         this.y = y;
 
         this.char = String.fromCharCode(0x30A0 + round(random(96)));
-        this.color = [255, 120, 0];
+        this.color(100, 0, 255);
         this.alpha = 255;
+        this.highlighted = false;
     }
 
     mutate() {
-        if (random() > .95) {
+        if (random() > .98) {
             this.char = String.fromCharCode(0x30A0 + round(random(96)));
         }
     }
 
     draw() {
-        fill(this.color[0], this.color[1], this.color[2], this.alpha);
+        let {r, g, b} = this.col
+        if (this.highlighted) {
+            fill(255);
+        } else {
+            fill(r, g, b, this.alpha);
+        }
         this.alpha -= 4;
         this.mutate();
         textSize(Symbol.size);
@@ -26,6 +32,10 @@ class Symbol {
     toDestroy() {
         return this.alpha <= 0;
     }
+
+    color(r, g, b) {
+        this.col = {r: r, g: g, b: b};
+    }
 }
 
-Symbol.size = 25;
+Symbol.size = 40;

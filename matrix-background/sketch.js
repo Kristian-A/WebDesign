@@ -1,17 +1,32 @@
 let symbols = [];
 let generators = [];
-let columns = 10;
+let columns;
 
 function setup() {
-    createCanvas(300, 300);
+    createCanvas(windowWidth*0.98, windowHeight*0.98);
+    columns = width/Symbol.size - 1;
+}
+
+function windowResized() {
+    resizeCanvas(windowWidth*0.98, windowHeight*0.98);
+    columns = width/Symbol.size - 1;
 }
 
 function draw() {
     clear();
 
-    if (random() > 0.95) {
-        let x = floor(random() * (columns + 1)) * Symbol.size;
-        generators.push(new Generator(x, 500));
+    if (random() > 0.8) {
+        let x = floor(random() * columns) * Symbol.size;
+        let available = true;
+        for (let gen of generators) {
+            if (gen.x == x) {
+                available = false;
+                break;
+            }
+        }
+        if (available) {
+            generators.push(new Generator(x, height+10));
+        }
     }
 
     for (let generator of generators) {

@@ -43,7 +43,7 @@ class Bird {
 	}
 
 	constructor(brain) {
-		this.radius = wi;
+		this.radius = 20;
 		this.pos = createVector(200, 200);
 		this.vel = createVector(0, -8);
 		if (brain == null) {
